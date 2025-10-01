@@ -65,7 +65,7 @@ jobs:
     - name: Load custom config
       run: |
         cd openwrt
-        cp -f ./defconfig/mt7981-jcg_q30.config .config
+        cp -f ./defconfig/mt7981-ax3000.config .config
         #echo "CONFIG_PACKAGE_kmod-netlink-diag=y" >> .config
         # echo "CONFIG_PACKAGE_kmod-nft-compat=y" >> .config
         #echo "CONFIG_PACKAGE_kmod-nft-core=y" >> .config
@@ -73,7 +73,7 @@ jobs:
         # echo "CONFIG_PACKAGE_kmod-nft-nat=y" >> .config
         # echo "CONFIG_PACKAGE_kmod-nft-offload=y" >> .config
         # echo "CONFIG_PACKAGE_kmod-nft-socket=y" >> .config
-        #echo "CONFIG_PACKAGE_kmod-nft-tproxy=y" >> .config
+        echo "CONFIG_PACKAGE_kmod-wireguard=y" >> .config
         
     - name: Download package
       id: package
